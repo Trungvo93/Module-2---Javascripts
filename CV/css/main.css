@@ -168,6 +168,7 @@ aside {
   border-radius: 99rem;
   width: 60%;
   overflow: hidden;
+  flex-shrink: 1;
 }
 
 .skill__item--photoshop {
