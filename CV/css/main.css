@@ -21,7 +21,8 @@ header {
   border-bottom-left-radius: 99rem;
   position: absolute;
   top: 20rem;
-  left: 20rem;
+  right: 0;
+  width: 90%;
 }
 
 .header__ava {
@@ -80,6 +81,7 @@ article {
   height: 50px;
   border-radius: 7px;
   background-color: #f9a624;
+  flex-shrink: 0;
 }
 
 .education__item--center {
@@ -110,6 +112,7 @@ aside {
 
 .contact {
   width: 100%;
+  margin-top: auto;
 }
 
 .contact__title {
@@ -126,13 +129,149 @@ aside {
   font-size: 1.5rem;
   gap: 1rem;
   padding: 0.7rem 0;
+  padding-right: 1rem;
 }
 
-.contact__item--icon {
-  flex-shrink: 0;
-}
 .contact__item--icon ion-icon {
   color: #f9a624;
+}
+
+.contact__item--info {
+  width: 100%;
+}
+
+.skill {
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.skill__title {
+  padding: 2rem 0;
+}
+.skill__title h1 {
+  padding: 1rem 1.5rem;
+  border: 1px solid #f9a624;
+  max-width: fit-content;
+}
+
+.skill__item {
+  display: flex;
+  font-size: 1.5rem;
+  gap: 2rem;
+  padding: 1rem 0;
+  padding-right: 1rem;
+  justify-content: space-between;
+}
+
+.skill__item--range {
+  background-color: #eeeeee;
+  border-radius: 99rem;
+  width: 60%;
+  overflow: hidden;
+  flex-shrink: 1;
+}
+
+.skill__item--photoshop {
+  background-color: #f9a624;
+  width: 90%;
+  height: 100%;
+}
+
+.skill__item--css {
+  background-color: #f9a624;
+  width: 72%;
+  height: 100%;
+}
+
+.skill__item--html {
+  background-color: #f9a624;
+  width: 85%;
+  height: 100%;
+}
+
+.skill__item--python {
+  background-color: #f9a624;
+  width: 63%;
+  height: 100%;
+}
+
+.social {
+  margin-top: auto;
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  border-top: 2px solid #eeeeee;
+  padding-bottom: 10rem;
+  padding-top: 5rem;
+}
+.social ion-icon {
+  font-size: 3rem;
+  color: #f9a624;
+}
+
+.social ion-icon:last-child {
+  padding-right: 2rem;
+}
+
+@media screen and (max-width: 991px) {
+  body {
+    padding: 0 2rem;
+  }
+
+  .education__item {
+    flex-wrap: wrap;
+  }
+
+  .skill__item {
+    flex-direction: column;
+  }
+
+  .skill__item--range {
+    background-color: #eeeeee;
+    border-radius: 99rem;
+    width: 100%;
+    height: 1.5rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  body {
+    padding: 0;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  .education__item {
+    flex-wrap: nowrap;
+  }
+}
+@media screen and (max-width: 575px) {
+  header {
+    margin: auto;
+    position: static;
+    flex-direction: column;
+    background-color: transparent;
+  }
+
+  .header__ava {
+    padding-top: 2rem;
+  }
+  .header__ava img {
+    width: 50%;
+    transform: scale(1);
+    display: block;
+    margin: auto;
+  }
+
+  .header__text {
+    padding: 2rem 0rem;
+    text-align: center;
+  }
+
+  article {
+    margin-top: 5rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
