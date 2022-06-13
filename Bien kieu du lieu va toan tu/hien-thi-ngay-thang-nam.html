@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    var year = prompt("Nhập năm");
+
+    var month = prompt("Nhập tháng");
+    while (month < 1 || month > 12) {
+        var month = prompt("Tháng không chỉ từ 1 đến 12");
+    }
+
+    var day = prompt("Nhập ngày");
+    while (day < 1 || day > 31) {
+        var day = prompt("Ngày chỉ từ 1 đến 31");
+    }
+
+    if (day < 10) {
+        day = "0" + day;
+    }
+    if (month < 10) {
+        month = "0" + month;
+    }
+
+    document.write(day, "-", month, "-", year);
+</script>

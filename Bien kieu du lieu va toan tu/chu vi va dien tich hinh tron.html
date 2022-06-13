@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-asdas
 </body>
 </html>
 
@@ -17,8 +16,8 @@ asdas
     let c,d,s;
     const pi= Math.PI;
     d = r * 2;
-    c = d * pi;
-    s = r*r * pi;
+    c = (d * pi).toFixed(2);
+    s = (Math.pow(r,2) * pi).toFixed(2);
     document.write("Đường kính hình tròn là d = ",d,"<br>");
     document.write("Chu vi hình tròn là c = ",c,'<br>');
     document.write("Diện tích hình tròn là s = ",s);
