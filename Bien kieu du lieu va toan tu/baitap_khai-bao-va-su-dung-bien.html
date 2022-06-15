@@ -7,18 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-
-
+    
 </body>
 </html>
 
 <script>
-    let x = prompt("Nhập số thứ nhất: ");
-    let y = prompt("Nhập số thứ hai: ");
-    x = parseInt(x);
-    y = parseInt(y);
-    let z = x + y;
-    document.writeln(z);
-    
-
+    let a = prompt('Nhập số a');
+    let b = prompt('Nhập số b');
+    c = a%b;
+    if (c==0){
+        alert('Số '+a+' là bội số của '+b);
+    }
+    else
+    {
+        alert('Số '+a+' không là bội số của '+b);
+    }
 </script>
