@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    let money = parseInt(prompt("Nhập số tiền vay"));
+    let rate = parseFloat(prompt("Nhập lãi suất ngân hàng"));
+    let year = parseInt(prompt("Nhập số năm phải trả"));
+    let money_rate = money * rate / 100;
+    let total = money + money_rate * year;
+    document.write('Tính lãi suất ngân hàng <br>');
+    document.write('Số tiền vay ngân hàng: ' + money +' VND <br>');
+    document.write('Lãi suất hằng năm: ' + rate + '% <br>');
+    document.write('Số năm trả: '+ year + '<br>');
+    document.write('Tổng số tiền phải trả: ' + total + ' VND');
+</script>
