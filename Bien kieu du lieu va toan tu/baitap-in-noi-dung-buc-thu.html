@@ -7,27 +7,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    #letter {
+        display: none;
+    }
+</style>
 
 <body>
-<p>
- <span id="name"></span> thương nhớ,
 
-<br>Em không biết phải nói sao để anh hiểu rằng, em nhớ anh thật nhiều. Em yêu anh đến khi trái tim này tan thành nghìn mảnh. Tất cả những gì em yêu thương, em khát khao và cần đến, chính là anh, mãi mãi về sau. Em chỉ muốn ở bên anh, và anh yêu hỡi, em sẽ trở thành người phụ nữ như anh mong muốn.
+    <h1>Bức thư tình gửi anh</h1>
+    <span>Tên người nhận:</span>
+    <input type="text" placeholder="Nhập tên" id="name">
+    <br>
+    </br>
+    <span>Địa điểm:</span>
+    <input type="text" id="address" placeholder="Nhập địa chỉ">
+    </br>
+    </br>
+    <span>Thời gian:</span>
+    <input type="date" placeholder="Nhập ngày tháng" id="date">
+    </br>
+    </br>
+    <button onclick="letter()">Soạn văn</button>
+    <div id="letter">
+        <h2>
+            <span id="show-name"></span>
+            thương nhớ
+        </h2>
+        <p>Em không biết phải nói sao để anh hiểu rằng, em nhớ anh thật nhiều. Em yêu anh đến khi trái tim này tan thành
+            nghìn mảnh. Tất cả những gì em yêu thương, em khát khao và cần đến, chính là anh, mãi mãi về sau. Em chỉ
+            muốn ở bên anh, và anh yêu hỡi, em sẽ trở thành người phụ nữ như anh mong muốn.</p>
+        <p>Có phải em thật tệ hại, khi cứ nghĩ đến anh thật nhiều, thật lâu và nhất là mỗi khi đêm xuống? Em hứa sẽ sẽ
+            cố gắng triệu triệu lần hơn thế. Nhưng hơn tất cả, em chỉ mong một ngày nào đó, anh sẽ tự hào về em, như tự
+            hào về vợ của anh, và mẹ của các con anh (ít nhất là 2 nhé, em vừa mới quyết định đấy!). Em nhớ thật nhiều
+            cảm giác mỗi đêm anh ôm em và ru em ngủ trong vòng tay. Đêm nay, em chỉ muốn được gần bên anh… và anh biết
+            không, trái tim em đang đau đớn đến nhường nào.</p>
+        <p>Anh yêu thương, đừng bao giờ rời xa em nữa nhé. Yêu anh rất nhiều.</p>
+        <p>
+            <span id="show-address"></span>
+            <span id="show-date"></span>
+        </p>
+    </div>
 
-<br>Có phải em thật tệ hại, khi cứ nghĩ đến anh thật nhiều, thật lâu và nhất là mỗi khi đêm xuống? Em hứa sẽ sẽ cố gắng triệu triệu lần hơn thế. Nhưng hơn tất cả, em chỉ mong một ngày nào đó, anh sẽ tự hào về em, như tự hào về vợ của anh, và mẹ của các con anh (ít nhất là 2 nhé, em vừa mới quyết định đấy!). Em nhớ thật nhiều cảm giác mỗi đêm anh ôm em và ru em ngủ trong vòng tay. Đêm nay, em chỉ muốn được gần bên anh… và anh biết không, trái tim em đang đau đớn đến nhường nào.
-
-<br>Anh yêu thương, đừng bao giờ rời xa em nữa nhé. Yêu anh rất nhiều.
-
-<Br><span id="address"></span>, <span id="time"></span>.
-</p>
 </body>
 
 </html>
 <script>
-    let name = prompt("Nhập tên:");
-    let address = prompt("Nhập địa chỉ:");
-    let time = prompt("Nhập thời gian");
-    document.getElementById("name").innerHTML = name;
-    document.getElementById("address").innerHTML = address;
-    document.getElementById("time").innerHTML = time;
+    function letter() {
+        let name = document.getElementById("name").value;
+        let address = document.getElementById("address").value;
+        let date = document.getElementById("date").value;
+        let show_letter = document.getElementById("letter");
+
+
+        if (show_letter.style.display == "none") {
+            show_letter.style.display = "block";
+            document.getElementById("show-name").innerHTML = name;
+            document.getElementById("show-address").innerHTML = address + ",";
+            document.getElementById("show-date").innerHTML = date;
+        }
+        else {
+            show_letter.style.display = "none";
+        }
+    }
 </script>
