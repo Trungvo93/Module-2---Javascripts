@@ -60,11 +60,11 @@
         let show_letter = document.getElementById("letter");
 
 
-        if (show_letter.style.display == "none") {
+        if (show_letter.style.display === "none") {
             show_letter.style.display = "block";
             document.getElementById("show-name").innerHTML = name;
             document.getElementById("show-address").innerHTML = address + ",";
-            document.getElementById("show-date").innerHTML = date;
+            document.getElementById("show-date").innerHTML = "Ngày " + date[8] + date[9] + ", Tháng " + date[5] + date [6] + ", Năm " + date[0] + date[1] + date[2] + date[3];
         }
         else {
             show_letter.style.display = "none";
