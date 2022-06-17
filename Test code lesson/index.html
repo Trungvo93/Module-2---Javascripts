@@ -8,17 +8,21 @@
 </head>
 <body>
 
+    <h1>Học lập trình miễn phí tại freetuts.net</h1>
+  
+    <button onclick="myFunction()">Run</button>
 
+    <p id="demo"></p>
+    <p id="demo_2"></p>
+    <script>
+        var str = 'freetuts.net-la-blog-chia-se kien thuc';
+        document.getElementById("demo").innerHTML = str;
+        function myFunction() {
+            document.getElementById("demo").innerHTML = str.split('-');
+            document.getElementById("demo_2").innerHTML = str[0] + str[1] + str[2];
+        }
+        
+    </script>
 </body>
 </html>
 
-<script>
-    let x = prompt("Nhập số thứ nhất: ");
-    let y = prompt("Nhập số thứ hai: ");
-    x = parseInt(x);
-    y = parseInt(y);
-    let z = x + y;
-    document.writeln(z);
-    
-
-</script>
