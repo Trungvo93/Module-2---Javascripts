@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>Document</title>
     <script src="test.js"></script>
 </head>
+
 <body>
 
     <input type="number" id="num1" placeholder="Nhập số thứ nhất">
@@ -20,6 +22,7 @@
     <button onclick="Caculator()">Tính</button>
     <p id="result"></p>
 
+<<<<<<< HEAD
     
 </body>
 </html>
@@ -44,3 +47,29 @@
         document.getElementById("result").innerHTML = display;
     }
 </script>
+=======
+    <ul>
+        <li class="menu">JAVA</li>
+        <li class="menu">JAVASCRIPT</li>
+        <li class="menu">PHP</li>
+        <li class="menu">PYTHON</li>
+    </ul>
+
+    <script>
+        // Lấy các phần tử có class là menu
+        let x = document.getElementsByClassName("menu");
+
+        // Lặp qua các phần tử có class là menu
+        for (let i = 0; i < x.length; i++) {
+
+            // Lắng nghe sự kiện click
+            // và đổi màu chữ thành màu đỏ
+            x[i].onclick = function () {
+                this.style.color = "red";
+            };
+        }
+    </script>
+</body>
+
+</html>
+>>>>>>> c93edf409dd5bf82a0b1252056d5fd01b266028f
