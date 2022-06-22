@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+#calculator{
+    padding: 2rem 1rem;
+    background-color: aquamarine;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+#calculator button{
+    flex: 22%;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 0px;
+    width: 30px;
+}
+
+#output_result{
+    flex: 100%;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 0px;
+    background-color: antiquewhite;
+}
+
+</style>
+<body>
+
+<div id="calculator">
+    <input type="text" id="output_result" disabled="disabled">
+    <button value="7" onclick="calculator()" class="numbers">7</button>
+    <button value="8" onclick="calculator()" class="numbers">8</button>
+    <button value="9" onclick="calculator()" class="numbers">9</button>
+    <button value="+">+</button>
+
+    <button value="4" onclick="calculator()" class="numbers">4</button>
+    <button value="5">5</button>
+    <button value="6">6</button>
+    <button value="-">-</button>
+
+    <button value="1">1</button>
+    <button value="2">2</button>
+    <button value="3">3</button>
+    <button value="*">*</button>
+
+    <button value="+/-">+/-</button>
+    <button value="0">0</button>
+    <button value="=">=</button>
+    <button value="/">/</button>
+</div>
+
+</body>
+</html>
+
+<script>
+
+function calculator(){
+}
+
+
+</script>

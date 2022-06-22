@@ -27,15 +27,16 @@
 //     document.getElementById("result").innerHTML = "Result Division: " + result;
 // }
 
-function div(num1,num2) {
-    let result = num1 / num2;
-    document.getElementById("result").innerHTML = "Result Division: " + result;
-}
+// function div(num1,num2) {
+//     let result = num1 / num2;
+//     document.getElementById("result").innerHTML = "Result Division: " + result;
+// }
 
 function calculate() {
     let num1 = +document.getElementById("num1").value;
     let num2 = +document.getElementById("num2").value;
     let x = document.getElementsByClassName("cal");
+    // console.log(x[1]);
     x[0].onclick = function () {
         let result = num1 + num2;
         document.getElementById("result").innerHTML = "Result Addition: " + result;
@@ -51,10 +52,11 @@ function calculate() {
     }
 
     //Test thử gọi hàm ngoài vào, phải báo biến trong hàm luôn mới được.
-    x[3].onclick = div(num1,num2); 
+    // x[3].onclick = div(num1,num2); 
 
-    // x[3].onclick = function () {
-    //     let result = num1 / num2;
-    //     document.getElementById("result").innerHTML = "Result Division: " + result;
-    // }
+    x[3].onclick = function () {
+        let result = num1 / num2;
+        document.getElementById("result").innerHTML = "Result Division: " + result;
+    }
 }
+
