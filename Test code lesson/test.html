@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,65 +9,290 @@
 </head>
 
 <style>
+    #calculator {
+        padding: 2rem 1rem;
+        background-color: aquamarine;
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
 
-#calculator{
-    padding: 2rem 1rem;
-    background-color: aquamarine;
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
-#calculator button{
-    flex: 22%;
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 0px;
-    width: 30px;
-}
+    #calculator button {
+        flex: 22%;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: 0px;
+        width: 30px;
+    }
 
-#output_result{
-    flex: 100%;
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 0px;
-    background-color: antiquewhite;
-}
+    #output_result {
+        display: block;
+        padding: 1rem 2rem;
+        margin-left: auto;
+        letter-spacing: 2px;
+        /* border: 0px; */
 
+
+    }
+
+    #old_result {
+        padding: 1rem 2rem;
+    }
+
+    .result {
+        width: 100%;
+        flex: 100%;
+        background-color: antiquewhite;
+        letter-spacing: 1px;
+        font-size: 1rem;
+        border-radius: 5px;
+    }
 </style>
+
+
+
+
+
 <body>
 
-<div id="calculator">
-    <input type="text" id="output_result" disabled="disabled">
-    <button value="7" onclick="calculator()" class="numbers">7</button>
-    <button value="8" onclick="calculator()" class="numbers">8</button>
-    <button value="9" onclick="calculator()" class="numbers">9</button>
-    <button value="+">+</button>
+    <div id="calculator">
+        <div class="result">
+            <p id="old_result"></p>
+            <input type="text" id="output_result" disabled="disabled">
+        </div>
 
-    <button value="4" onclick="calculator()" class="numbers">4</button>
-    <button value="5">5</button>
-    <button value="6">6</button>
-    <button value="-">-</button>
+        <button value="7" onclick="numbers()" class="numbers">7</button>
+        <button value="8" onclick="numbers()" class="numbers">8</button>
+        <button value="9" onclick="numbers()" class="numbers">9</button>
+        <button value="+" onclick="pheptinh()" class="pheptinh">+</button>
 
-    <button value="1">1</button>
-    <button value="2">2</button>
-    <button value="3">3</button>
-    <button value="*">*</button>
+        <button value="4" onclick="numbers()" class="numbers">4</button>
+        <button value="5" onclick="numbers()" class="numbers">5</button>
+        <button value="6" onclick="numbers()" class="numbers">6</button>
+        <button value="-" onclick="pheptinh()" class="pheptinh">-</button>
 
-    <button value="+/-">+/-</button>
-    <button value="0">0</button>
-    <button value="=">=</button>
-    <button value="/">/</button>
-</div>
+        <button value="1" onclick="numbers()" class="numbers">1</button>
+        <button value="2" onclick="numbers()" class="numbers">2</button>
+        <button value="3" onclick="numbers()" class="numbers">3</button>
+        <button value="*" onclick="pheptinh()" class="pheptinh">*</button>
+
+        <button value="+/-" onclick="amduong()" id="amduong">+/-</button>
+        <button value="0" onclick="numbers()" class="numbers">0</button>
+        <button value="=" onclick="result()" id="result">=</button>
+        <button value="/" onclick="pheptinh()" class="pheptinh">/</button>
+    </div>
 
 </body>
-</html>
+
 
 <script>
 
-function calculator(){
-}
 
+    //Hàm này cho nó load để khỏi bị hiện tưởng phải click lần 2 thì mấy cái function mới dc chạy
+    window.onload = function () {
+        numbers();
+        pheptinh();
+    };
+    var old_output;
+    var output = document.getElementById("output_result").value;
+    function numbers() {
+
+
+        let num = document.getElementsByClassName("numbers");
+        num[0].onclick = function () {
+
+            //Reset về từ đầu nếu muốn tính phép tính mới khi không cần bấm phím reset
+            if (old_output == output) {
+                output = "";
+            }
+            output = output + String(num[0].value);
+
+            document.getElementById("output_result").value = output;
+        }
+
+        num[1].onclick = function () {
+
+            if (old_output == output) {
+                output = "";
+            }
+            output = output + String(num[1].value);
+
+            document.getElementById("output_result").value = output;
+        }
+
+        num[2].onclick = function () {
+
+            if (old_output == output) {
+                output = "";
+            }
+            output = output + String(num[2].value);
+
+            document.getElementById("output_result").value = output;
+        }
+
+        num[3].onclick = function () {
+
+            if (old_output == output) {
+                output = "";
+            }
+            output = output + String(num[3].value);
+
+            document.getElementById("output_result").value = output;
+        }
+
+        num[4].onclick = function () {
+
+            if (old_output == output) {
+                output = "";
+            }
+            output = output + String(num[4].value);
+
+            document.getElementById("output_result").value = output;
+        }
+
+        num[5].onclick = function () {
+
+            if (old_output == output) {
+                output = "";
+            }
+            output = output + String(num[5].value);
+
+            document.getElementById("output_result").value = output;
+        }
+
+        num[6].onclick = function () {
+
+            if (old_output == output) {
+                output = "";
+            }
+            output = output + String(num[6].value);
+
+            document.getElementById("output_result").value = output;
+        }
+
+        num[7].onclick = function () {
+
+            if (old_output == output) {
+                output = "";
+            }
+            output = output + String(num[7].value);
+
+            document.getElementById("output_result").value = output;
+        }
+
+        num[8].onclick = function () {
+
+            if (old_output == output) {
+                output = "";
+            }
+            output = output + String(num[8].value);
+
+            document.getElementById("output_result").value = output;
+        }
+
+        num[9].onclick = function () {
+
+            if (old_output == output) {
+                output = "";
+            }
+            output = output + String(num[9].value);
+            document.getElementById("output_result").value = output;
+        }
+    }
+
+    function pheptinh() {
+
+        //Hàm này để không có dấu cộng trừ nhân chia ở đầu phép tính tránh bị lỗi
+        if (output[0] != undefined) {
+            output = document.getElementById("output_result").value;
+            let pheptinh = document.getElementsByClassName("pheptinh");
+
+
+            pheptinh[0].onclick = function () {
+
+
+                //Hàm if này để phép toán không có 2 dấu tính liên tiếp nhau
+                if (output[output.length - 1] != "+" && output[output.length - 1] != "-" && output[output.length - 1] != "*" && output[output.length - 1] != "/") {
+                    output = output + String(pheptinh[0].value);
+                    document.getElementById("output_result").value = output;
+                }
+
+
+            }
+
+            pheptinh[1].onclick = function () {
+
+                if (output[output.length - 1] != "+" && output[output.length - 1] != "-" && output[output.length - 1] != "*" && output[output.length - 1] != "/") {
+                    output = output + String(pheptinh[1].value);
+                    document.getElementById("output_result").value = output;
+                }
+
+            }
+
+            pheptinh[2].onclick = function () {
+                if (output[output.length - 1] != "+" && output[output.length - 1] != "-" && output[output.length - 1] != "*" && output[output.length - 1] != "/") {
+                    output = output + String(pheptinh[2].value);
+                    document.getElementById("output_result").value = output;
+                }
+
+            }
+
+            pheptinh[3].onclick = function () {
+                if (output[output.length - 1] != "+" && output[output.length - 1] != "-" && output[output.length - 1] != "*" && output[output.length - 1] != "/") {
+                    output = output + String(pheptinh[3].value);
+                    document.getElementById("output_result").value = output;
+                }
+
+            }
+        }
+    }
+
+    function amduong() {
+
+        // if (output.indexOf("+") == -1 && output.indexOf("-") == -1 && output.indexOf("*") == -1 && output.indexOf("/") == -1 ) {
+
+        //     if (output[0] != "-") {
+        //         document.getElementById("output_result").value = "-" + output;
+        //         output = document.getElementById("output_result").value;
+        //     }
+
+        //     else {
+        //     document.getElementById("output_result").value = output[0];
+        // }
+
+        // }
+
+        if (output[0] != "-") {
+            document.getElementById("output_result").value = "-" + output;
+            output = document.getElementById("output_result").value;
+        }
+
+        else {
+            output = output.substr(1);
+            document.getElementById("output_result").value = output;
+
+        }
+
+
+    }
+    function result() {
+
+        if (output[output.length - 1] != "+" && output[output.length - 1] != "-" && output[output.length - 1] != "*" && output[output.length - 1] != "/") {
+            //In lịch sử phép tính
+            document.getElementById("old_result").innerHTML = output;
+
+            old_output = eval(output);
+            document.getElementById("output_result").value = old_output;
+            output = document.getElementById("output_result").value;
+        }
+
+
+        // console.log(old_output);
+        // console.log(output);
+
+    }
 
 </script>
+
+</html>
