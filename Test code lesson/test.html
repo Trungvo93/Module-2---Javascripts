@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="number" placeholder="Nhập tháng" id="nhapthang">
+    <button onclick="show_date()">Hiện ngày</button>
+    <p id="show_result"></p>
+</body>
+
+<script>
+    function show_date(){
+        let thang = document.getElementById("nhapthang").value;
+        
+        if (thang == "1" || thang == "3" || thang == "5" || thang == "7" || thang == "8" || thang == "10" || thang == "12"){
+            document.getElementById("show_result").innerHTML = "Tháng " + thang + " có 31 ngày";
+        }
+        else if ( thang == "2"){
+            document.getElementById("show_result").innerHTML = "Tháng " + thang + " có 28 hoặc 29 ngày";
+        }
+        else{
+            document.getElementById("show_result").innerHTML = "Tháng " + thang + " có 30 ngày";
+        }
+    }
+</script>
+</html>
