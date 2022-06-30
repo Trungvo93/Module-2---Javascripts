@@ -9,14 +9,32 @@
 </head>
 
 <body>
-    <script>
-        var string = "Welcome to freetuts.net";
-        let dodai;
-        document.write("Chuỗi cần lấy là: " + string.slice(11, 999));
-        console.log(string[string.length-3]);
-        dodai = string.slice(11, 999).length;
-        console.log(dodai);
-    </script>
+    <button onclick="test()" class="a">Nút 1</button>
+    <button onclick="test()" class="a">Nút 2</button>
+
+    <p id="hienketqua"></p>
 </body>
+
+<script>
+    let num = 0;
+    function test() {
+    let a = document.getElementsByClassName("a");
+
+        for (let i = 0; i < a.length; i++) {
+            a[i].onclick = function () {
+                // num++;  
+                document.getElementById("hienketqua").innerHTML = num; 
+            }
+            a[i].onclick = function () {
+                // num++;   
+                document.getElementById("hienketqua").innerHTML = num;
+            }
+            num++;
+            // document.getElementById("hienketqua").innerHTML = num;
+            console.log(num);
+        }
+
+    }
+</script>
 
 </html>

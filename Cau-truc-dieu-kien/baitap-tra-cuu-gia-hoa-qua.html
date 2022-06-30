@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Tra cứu giá hoa quả</title>
+</head>
+<body>
+    <form action="">
+        
+        <legend><b>Giá hoa quả</b></legend><br>
+        
+        <select name="" id="hoaqua" >
+          <option value="oi">Quả Ổi</option>
+          <option value="duahau">Quả Dưa Hấu</option>
+          <option value="tao">Quả Táo</option>
+          <option value="xoai">Quả Xoài</option>
+          <option value="cam">Quả Cam</option>
+          <option value="chomchom">Quả Chôm Chôm</option>
+          <option value="mangcut">Quả Măng Cụt</option>
+        </select> 
+        <button type="button" onclick="price();">Xem Giá</button>
+        <p id="result">Giá hoa quả</p>
+    </form>
+</body>
+
+<script>
+    function price() {
+    let fruit = document.getElementById("hoaqua").value;
+    let element_label = document.getElementById("hoaqua");
+    let fruit_label = element_label.options[element_label.selectedIndex].innerHTML;
+    let price;
+    console.log (fruit);
+    switch (fruit) {
+        case "oi":
+        price = "20.000 VND/Kg";
+        break;
+        case "duahau":
+        price = "20.000 VND/Kg";
+        break;
+        case "tao":
+        price = "30.000 VND/Kg";
+        break;
+        case "xoai":
+        price = "30.000 VND/Kg";
+        break;
+        case "cam":
+        price = "40.000 VND/Kg";
+        break;
+        case "chomchom":
+        price = "40.000 VND/Kg";
+        break;
+        case "mangcut":
+        price = "50.000 VND/Kg";
+        break;
+        default:
+        price = "khong co gia tri";
+    }
+    document.getElementById("result").innerHTML= fruit_label +  " có giá là " + price;
+}
+</script>
+</html>
