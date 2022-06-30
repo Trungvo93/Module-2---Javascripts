@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Tính chỉ số cân nặng của cơ thể (JS)</title>
+</head>
+<body>
+    <h1>[Bài tập] Tính chỉ số cân nặng của cơ thể (JS)</h1>
+    <input type="number" name="" id="input_weight" placeholder="Nhập cân nặng(kg)">
+    <input type="number" id="input_height" placeholder="Nhập chiều cao(cm)">
+    <button onclick="bmi()">Kết quả</button>
+    <p id="result"></p>
+
+</body>
+
+<script>
+
+    function bmi(){
+        let weight = document.getElementById("input_weight").value;
+        let height = eval(document.getElementById("input_height").value + "/100");
+        let result = weight / Math.pow(height,2);
+        console.log(result);
+        
+        if(result < "16"){
+            document.getElementById("result").innerHTML = "Phân loại: Gầy độ III";
+        }
+
+        if(result >= "16" && result < "17"){
+            document.getElementById("result").innerHTML = "Phân loại: Gầy độ II";
+        }
+
+        if(result >= "17" && result < "18.5"){
+            document.getElementById("result").innerHTML = "Phân loại: Gầy độ I";
+        }
+
+        if(result >= "18.5" && result < "25"){
+            document.getElementById("result").innerHTML = "Phân loại: Bình thường";
+        }
+
+        if(result >= "25" && result < "30"){
+            document.getElementById("result").innerHTML = "Phân loại: Thừa cân"
+        }
+
+        if(result >= "30" && result < "35"){
+            document.getElementById("result").innerHTML = "Phân loại: Béo phì độ I"
+        }
+
+        if(result >= "35" && result < "40"){
+            document.getElementById("result").innerHTML = "Phân loại: Béo phì độ II"
+        }
+
+        if(result > "40"){
+            document.getElementById("result").innerHTML = "Phân loại: Béo phì độ III";
+        }
+
+    }
+</script>
+</html>
