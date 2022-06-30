@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Ứng dụng chuyển đổi tiền tệ (JS)</title>
+</head>
+<body>
+    <h1>[Bài tập] Ứng dụng chuyển đổi tiền tệ (JS)</h1>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><input type="number" name="" id="input_money" placeholder="Nhập số tiền muốn quy đổi"></td>
+            <td>
+                <select name="" id="from_currency">
+                    <option value="vietnam">VietNam</option>
+                    <option value="usd">USD</option>
+                    <option value="japan">Japan</option>
+                </select>
+            </td>
+
+            <td>
+                <select name="" id="to_currency">
+                    <option value="vietnam">VietNam</option>
+                    <option value="usd">USD</option>
+                    <option value="japan">Japan</option>
+                </select>
+            </td>
+
+            <td>
+                <button onclick="convert()">Convert</button>
+            </td>
+        </tr>
+    </table>
+    <p id="result"></p>
+</body>
+
+<script>
+    function convert() {
+        let money = document.getElementById("input_money").value;
+        let from_currency = document.getElementById("from_currency").value;
+        let to_currency = document.getElementById("to_currency").value;
+
+        let viet_usd = "0.000043";
+        let viet_japan = "0.0058";
+        let usd_japan = "135.90";
+
+        let result = money;
+        console.log(result);
+        //Đổi tiền Việt ra USD và JAPAN
+        if (from_currency =="vietnam" && to_currency =="usd"){
+            result = eval(money + "*" + viet_usd);
+        }
+
+        if (from_currency =="vietnam" && to_currency =="japan"){
+            result = eval(money + "*" + viet_japan);
+        }
+
+        //Đổi tiền USD ra Việt Nam và Japan
+        if (from_currency =="usd" && to_currency =="vietnam"){
+            result = eval(money + "/" + viet_usd);
+        }
+
+        if (from_currency =="usd" && to_currency =="japan"){
+            result = eval(money + "*" + usd_japan);
+        }
+
+        //Đổi tiền Japan ra Việt Nam và USD
+        if (from_currency =="japan" && to_currency =="vietnam"){
+            result = eval(money + "/" + viet_japan);
+        }
+
+        if (from_currency =="japan" && to_currency =="usd"){
+            result = eval(money + "/" + usd_japan);
+        }
+
+        document.getElementById("result").innerHTML = "Thành tiền: " + result + " đồng";
+    }
+
+</script>
+</html>
