@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[*Bài tập] Ứng dụng máy tính bỏ túi</title>
+</head>
+<style>
+    .maytinh {
+        width: 400px;
+        border: 5px solid black;
+        padding: 5px;
+        margin: auto;
+    }
+
+    .maytinh input {
+        width: 95%;
+        margin: auto;
+        display: block;
+        text-align: right;
+    }
+
+    .btn {
+        display: flex;
+        gap: 10px;
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+
+    .btn button {
+        flex: 20%;
+    }
+</style>
+
+<body>
+    <div class="maytinh">
+        <input type="text" id="show_result" disabled="disabled" value="0">
+        <div class="btn">
+            <button value="1" onclick="calculator(this.value)">1</button>
+            <button value="2" onclick="calculator(this.value)">2</button>
+            <button value="3" onclick="calculator(this.value)">3</button>
+            <button value="+" onclick="calculator(this.value)">+</button>
+
+            <button value="4" onclick="calculator(this.value)">4</button>
+            <button value="5" onclick="calculator(this.value)">5</button>
+            <button value="6" onclick="calculator(this.value)">6</button>
+            <button value="-" onclick="calculator(this.value)">-</button>
+
+            <button value="7" onclick="calculator(this.value)">7</button>
+            <button value="8" onclick="calculator(this.value)">8</button>
+            <button value="9" onclick="calculator(this.value)">9</button>
+            <button value="*" onclick="calculator(this.value)">*</button>
+
+            <button value="C" onclick="calculator(this.value)">C</button>
+            <button value="0" onclick="calculator(this.value)">0</button>
+            <button value="=" onclick="calculator(this.value)">=</button>
+            <button value="/" onclick="calculator(this.value)">/</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    let show;
+    let bientam;
+    let xoa_0 = 1;
+    let num1 = "";
+    let num2 = "";
+    let toantu = "";
+    let result;
+    function calculator(evt) {
+
+        //Lệnh xóa số 0 lần đầu
+        if (xoa_0 == 1) {
+            document.getElementById("show_result").value = "";
+            xoa_0++;
+        }
+
+        show = document.getElementById("show_result").value + evt;
+        // bientam = show;
+        document.getElementById("show_result").value = show;
+
+
+        if (evt == "+" || evt == "-" || evt == "*" || evt == "/") {
+            num1 = +show.slice(0, (show.length - 1));
+            toantu = evt;
+            document.getElementById("show_result").value = "";
+
+        }
+
+        if (evt == "=") {
+            num2 = +show.slice(0, (show.length - 1));
+            switch (toantu) {
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    result = num1 / num2;
+                    break;
+            }
+
+            document.getElementById("show_result").value = result;
+        }
+
+        if (evt == "C"){
+            document.getElementById("show_result").value = "0";
+            xoa_0 = 1;
+        }
+    }
+</script>
+
+</html>
