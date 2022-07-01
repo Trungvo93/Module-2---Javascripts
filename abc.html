@@ -1,40 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
-    <button onclick="test()" class="a">Nút 1</button>
-    <button onclick="test()" class="a">Nút 2</button>
-
-    <p id="hienketqua"></p>
+    <h1><b>Tính điểm ĐH khối D</b></h1>
+    <form action="">
+        <table>
+           <tr>
+                <td style="padding:20px 0px">Môn Toán </td>
+                <td><input type="number" id="toan"></td>
+           </tr>
+           <tr>
+                <td style="padding:20px 0px">Môn Văn </td>
+                <td><input type="number" id="van"></td>
+           </tr>
+           <tr>
+                <td style="padding:20px 0px">Môn Anh </td>
+                <td><input type="number" id="anh"></td>
+           </tr>
+           <tr>
+                <td style="padding:20px 0px">Khu vực</td>
+                <td>
+                    <select name="khu vuc" id="place">
+                        <option value="1">KV1</option>
+                        <option value="2NT">KV2-NT</option>
+                        <option value="2">KV2</option>
+                        <option value="3">KV3</option>
+                    </select>
+                </td>
+           </tr>
+        </table>
+    </form>
+    <br>
+    <button type="button" onclick="tinhdiem();">Tính điểm</button>
+    <br><br>
+    <p id="ketqua" style="color:red">Tổng điểm ĐH khối D của bạn là: </p>
 </body>
 
 <script>
-    let num = 0;
-    function test() {
-    let a = document.getElementsByClassName("a");
-
-        for (let i = 0; i < a.length; i++) {
-            a[i].onclick = function () {
-                // num++;  
-                document.getElementById("hienketqua").innerHTML = num; 
-            }
-            a[i].onclick = function () {
-                // num++;   
-                document.getElementById("hienketqua").innerHTML = num;
-            }
-            num++;
-            // document.getElementById("hienketqua").innerHTML = num;
-            console.log(num);
-        }
-
-    }
+    function tinhdiem() {
+    let a = "toan";
+    let math  = +document.getElementById(a).value;
+    console.log(math);
+    let liter = +document.getElementById("van").value;
+    let eng   = +document.getElementById("anh").value;
+    let place = document.getElementById("place").value;
+    let area;
+    switch (place){
+        case "1":
+            area = "0.75";
+            break;
+        case "2NT":
+            area = "0.5";
+            break;
+        case "2":
+            area = "0.25";
+            break;
+        case "3":
+            area = "0";
+            break;
+        default:
+            area ="Nhập lại";
+    } 
+    let sum = math + liter + eng + area;
+    document.getElementById("ketqua").innerHTML ="Tổng điểm ĐH khối D của bạn là: "  + sum;
+    console.log(area);
+    // console.log(place);
+}
 </script>
-
 </html>

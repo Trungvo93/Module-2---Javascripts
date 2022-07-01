@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[*Bài tập] Tính năm âm lịch từ năm dương lịch</title>
+</head>
+
+<body>
+    <h1>[*Bài tập] Tính năm âm lịch từ năm dương lịch</h1>
+    <input type="number" name="" id="canchi" onkeyup="canchi(event)" placeholder="Nhập năm sinh vào đây">
+    <p id="result"></p>
+</body>
+
+<script>
+    function canchi(evt) {
+        if (evt.keyCode == 13) {
+            let num = document.getElementById("canchi").value;
+            let can = num % 10;
+            let chi = num % 12;
+            let result = "";
+            switch (can) {
+                case 0:
+                    result = result + "Canh";
+                    break;
+                case 1:
+                    result = result + "Tân";
+                    break;
+                case 2:
+                    result = result + "Nhâm";
+                    break;
+                case 3:
+                    result = result + "Quý";
+                    break;
+                case 4:
+                    result = result + "Giáp";
+                    break;
+                case 5:
+                    result = result + "Ất";
+                    break;
+                case 6:
+                    result = result + "Bính";
+                    break;
+                case 7:
+                    result = result + "Đinh";
+                    break;
+                case 8:
+                    result = result + "Mậu";
+                    break;
+                case 9:
+                    result = result + "Kỷ";
+                    break;
+            }
+
+            switch (chi) {
+                case 0:
+                    result = result + " Thân";
+                    break;
+                case 1:
+                    result = result + " Dậu";
+                    break;
+                case 2:
+                    result = result + " Tuất";
+                    break;
+                case 3:
+                    result = result + " Hợi";
+                    break;
+                case 4:
+                    result = result + " Tý";
+                    break;
+                case 5:
+                    result = result + " Sửu";
+                    break;
+                case 6:
+                    result = result + " Dần";
+                    break;
+                case 7:
+                    result = result + " Mẹo";
+                    break;
+                case 8:
+                    result = result + " Thìn";
+                    break;
+                case 9:
+                    result = result + " Tị";
+                    break;
+                case 10:
+                    result = result + " Ngọ";
+                    break;
+                case 11:
+                    result = result + " Mùi";
+                    break;
+            }
+            if(result == ""){
+                document.getElementById("result").innerHTML = "Không đúng định dạng năm";
+            }
+            else
+            {
+                document.getElementById("result").innerHTML = result;
+            }
+            
+        }
+    }
+</script>
+
+</html>
