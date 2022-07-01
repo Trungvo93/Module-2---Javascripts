@@ -82,7 +82,10 @@
 
 
         if (evt == "+" || evt == "-" || evt == "*" || evt == "/") {
+
             num1 = +show.slice(0, (show.length - 1));
+
+
             toantu = evt;
             document.getElementById("show_result").value = "";
 
@@ -106,9 +109,10 @@
             }
 
             document.getElementById("show_result").value = result;
+            // xoa_0 = 1;
         }
 
-        if (evt == "C"){
+        if (evt == "C") {
             document.getElementById("show_result").value = "0";
             xoa_0 = 1;
         }
