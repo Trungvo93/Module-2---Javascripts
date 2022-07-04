@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Sinh bảng cửu chương (JS)</title>
+</head>
+<body>
+    
+    
+    <script>
+        let table = '<table style="border: 2px solid black;border-collapse: collapse;">';
+        for (let i = 1; i<=9; i++){
+            table = table+'<tr style="border: 2px solid black;">';
+                for (let y = 2; y<=9 ; y++)
+                {
+                    table = table + '<td style="border: 2px solid black;">' + y + "x" + i + "=" + (i*y) + "</td>";
+
+                }
+            table = table + "</tr>";
+        }
+        table = table + "</table>";
+        document.write(table);
+
+
+        // debugger;
+        let bang = '<table style="border: 2px solid black;border-collapse: collapse;">';
+        let a = 1;
+        let b = 2;
+        while (a<=9){
+            bang = bang + '<tr style="border: 2px solid black;">';
+            while (b<=9){
+                bang = bang + '<td style="border: 2px solid black;">' + b + "x" + a + "=" + a*b + "</td>";
+                b++;
+            }
+            b=2;
+            a++;
+            bang = bang + '</tr>';
+        }
+        bang = bang + '</table>';
+        document.write(bang);
+    </script>
+</body>
+</html>
