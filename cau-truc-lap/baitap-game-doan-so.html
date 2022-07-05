@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Game đoán số</title>
+</head>
+<body>
+    <h1>Game đoán số</h1>
+    <button onclick="playgame()">Chơi</button>
+</body>
+
+<script>
+    function playgame() {
+        debugger;
+        let max = prompt("Nhập khoảng giá trị muốn đoán: ");
+        let num_random = Math.floor(Math.random() * max+1);
+        let i = 1;
+        let a = prompt("Nhập số bạn đoán");
+        while(i<=2) {
+            if (a == num_random){
+                alert("Chúc mừng bạn đã doán chính xác");
+                i=1;
+                break;
+            }
+            else{
+                
+                a = prompt("Số " + a + " không chính xác, mời bạn nhập lại lần " + (i+1)); 
+                i++;
+            }
+        }
+        if (i==3) { 
+            alert("Bạn đã thua");
+        }
+    }
+</script>
+</html>
