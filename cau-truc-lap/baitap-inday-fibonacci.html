@@ -17,12 +17,15 @@
         //Kiểm tra nếu nhấn enter thì chạy lệnh
         if(evt.keyCode=="13"){
             debugger;
-            let inp_value = document.getElementById('inp_value').value;
+            let n = document.getElementById('inp_value').value;
             let i=3;
             let num1 = 1, num2 = 1;
             let bien_tam;
             let result = "1" + " " + "1";
-            while (i<=inp_value){
+            if (n==1){
+                result = "1";
+            }
+            while (i<=n){
                 bien_tam = num1 + num2;
                 result = result + " " + bien_tam;
                 num1 = num2;
