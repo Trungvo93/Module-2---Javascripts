@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // Tạo mảng array[i][j] trong đó i,j random từ 1 đến 100, giá trị trong mảng random từ 1 đến 1000, tính tổng viền
+        let array = new Array();
+        // let i = Math.floor(Math.random() * 10);
+        // let j = Math.floor(Math.random() * 10);
+        let i = 3, j=2;
+        let child_array = new Array();
+        // console.log(i);
+        // console.log(j);
+        // array.push([5,2,3,5]);
+        // array.push(['a','5','s']);
+
+        for (let n = 0; n < i; n++) {
+            for (let m = 0; m <j ; m++){
+                child_array[m]=Math.floor(Math.random()*100);
+                // child_array.push(Math.floor(Math.random()*100));
+            }
+            // child_array[0]= 22, child_array[1]=23;
+
+            
+            array[n] = child_array;
+            child_array = new Array();
+            
+        }console.log(array);
+
+    </script>
+</body>
+</html>

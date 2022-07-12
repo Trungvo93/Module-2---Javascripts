@@ -8,7 +8,28 @@
 </head>
 <body>
   <script>
-    document.write("bbbbb</br>bb&nbsp&nbspbb");
+    let array = new Array();
+    let count = 0;
+    do{
+      array[count] = prompt ("Nhập giá trị phần tử thứ " + (count+1) + ". Nhập 'q' để thoát mảng đang nhập");
+      count++;
+    }while(array[count-1] != "q");
+    array = array.slice(0,-1);
+
+    
+    let findValue = prompt ("Nhập giá trị cần tìm");
+    let i = 0;
+    for (; i< array.length; i++){
+      if(array[i] == findValue){
+        alert("Giá trị " + findValue + " tìm thấy ở vị trí thứ " + i + " trong mảng");
+        break;
+      }
+    }
+
+    if(i == array.length){
+      alert ("Không tìm thấy giá trị trong mảng");
+    }
+    console.log(array);
   </script>
 </body>
 </html>
