@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Sử dụng các hàm có sẵn của mảng</title>
+</head>
+<style>
+    div{
+        padding: 50px 0px;
+    }
+</style>
+<body>
+
+    <!-- Bài 1 -->
+    <div>
+        <h1>Bài 1 Viết một chương trình Javascript để nối tất cả các phần tử trong một mảng chuỗi lại với nhau. Ví dụ có
+            mảng chuỗi như sau: myColor = [“Red”, “Green”, “White”, “Black”];
+            Sau khi thực thi chương trình sẽ trả về dạng như sau :
+
+            “Red,Green,White,Black”</h1>
+        <input type="text" name="" id="inp_bai1" placeholder="Nhập chữ vào đây">
+        <button onclick="addArray()">Nhập thêm giá trị</button>
+        <button onclick="connectArray()">Nối chuỗi</button>
+        <p id="show_array"></p>
+        <p id="connect_array"></p>
+        <script>
+            let arr_1 = new Array();
+            function addArray() {
+                let inp_bai1 = document.getElementById("inp_bai1").value;
+                arr_1.push(inp_bai1);
+                document.getElementById("inp_bai1").value = '';
+                document.getElementById("show_array").innerHTML = '[' + arr_1 + ']';
+            }
+
+            function connectArray() {
+                document.getElementById("connect_array").innerHTML = arr_1.join('-');
+            }
+        </script>
+    </div>
+
+    <!-- Bài 2 -->
+    <div>
+        <h1>Bài 2: Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2 số chẵn. Ví dụ nếu bạn nhập vào
+            025468 thì kết quả của chương trình sẽ là 0-254-6-8.</h1>
+        <input type="number" name="" id="inp_bai2" placeholder="Nhập số vào">
+        <button onclick="insert_minus()">Chèn dấu - vào</button>
+        <p id="show_result2"></p>
+
+        <script>
+            function insert_minus(){
+                let arr_2 = document.getElementById("inp_bai2").value.toString();
+                let result = [arr_2[0]];
+                for (let i = 1; i< arr_2.length; i++){
+                    if(arr_2[i-1]%2==0 && arr_2[i]%2==0){
+                        result.push('-', arr_2[i]);
+                    }else{
+                        result.push(arr_2[i]);
+                    }
+                    
+                }
+                document.getElementById("show_result2").innerHTML ='Kết quả là: ' + result.join('');
+            }
+        </script>
+    </div>
+
+    <!-- Bài 3 -->
+    <div>
+        <h1>Bài 3: Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa. Ví dụ: nếu bạn nhập vào chuỗi ‘The Quick Brown Fox’ kết quả của chương trình là ‘tHE qUICK bROWN fOX’.</h1>
+        <input type="text" name="" id="inp_3" placeholder="Nhập câu muốn chuyển đổi vào đây">
+        <button onclick="convert_alpha()">Nhấn vào đây để chuyển</button>
+        <p id="show_3"></p>
+        <script>
+            function convert_alpha(){
+                let arr_3 = document.getElementById("inp_3").value;
+                let result_3 = [];
+                for(let i = 0; i < arr_3.length; i++){
+                    if(arr_3[i] == arr_3[i].toUpperCase()){
+                        result_3[i] = arr_3[i].toLowerCase();
+                    }
+                    else{
+                        result_3[i] = arr_3[i].toUpperCase();
+                    }
+                }
+                document.getElementById("show_3").innerHTML = "Kết quả là: " + result_3.join('');
+            }
+        </script>
+    </div>
+</body>
+
+</html>

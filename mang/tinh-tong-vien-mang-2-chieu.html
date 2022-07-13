@@ -14,11 +14,15 @@
         let i = Math.floor(Math.random() * 20)+1;
         let j = Math.floor(Math.random() * 20)+1;
         let sum = 0;
+        let sum_even = 0;
         document.write('Mảng arr có chiều dài: '+ j + ' và chiều cao: ' + i + '<br>');
         for (let n = 0; n < i; n++) {
             let child_arr = new Array();
             for (let m = 0; m <j ; m++){
                 child_arr.push(Math.floor(Math.random()*100));
+                if(child_arr[m]%2 == 0){
+                    sum_even +=child_arr[m];
+                }
                 if( n == 0 || n == i-1){
                     sum += child_arr[m];
                 }else if( m == 0 || m == j-1){
@@ -28,7 +32,8 @@
             arr[n] = child_arr;
             document.write('[' + arr[n] + "]<br>");
         }
-        document.write('Tổng viền bằng: ' + sum);
+        document.write('Tổng viền bằng: ' + sum + '<br>');
+        document.write('Tổng chẵn bằng: ' + sum_even);
     </script>
 </body>
 </html>

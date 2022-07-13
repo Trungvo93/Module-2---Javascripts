@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Từ điển Anh - Việt</title>
+</head>
+<body>
+    <h1>Từ điển Anh - Việt</h1>
+    <input type="text" name="" id="inp_value" placeholder="Nhập từ muốn">
+    <button onclick="translate_AV()">Dịch</button>
+    <p id="result"></p>
+    <script>
+        function translate_AV(){
+            let arr = [
+                ['Táo','Xoài','Ổi','Dưa hấu','Dừa','Cam'],
+                ['Apple','Mango','Guava','Watermelon','Coconut','Oragne']
+            ];
+            let inp_value = document.getElementById("inp_value").value;
+            let result = '';
+            for (let i = 0; i < arr.length; i++){
+                for (let j = 0; j < arr[i].length; j++){
+                    if(inp_value == arr[i][j]){
+                        if(i == 0){
+                            result = arr[1][j];
+                        }
+                        else{
+                            result = arr[0][j];
+                        }
+                    }
+                }
+            }
+            if (result == ''){
+                document.getElementById("result").innerHTML = "Từ này không có trong từ điển";
+            }else{
+                document.getElementById("result").innerHTML = result;
+            }
+        }
+    </script>
+</body>
+</html>
