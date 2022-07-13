@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] In dãy Fibonacci</title>
 </head>
 <body>
-  <script>
-    document.write("bbbbb</br>bb&nbsp&nbspbb");
-  </script>
+    <h1>[Bài tập] In dãy Fibonacci</h1>
+    <input type="number" name="" id="inp_value" onkeyup="in_day_fibonacci(event)" placeholder="Nhập số vào đây">
+    <p id="result"></p>
 </body>
+
+<script>
+    function in_day_fibonacci(evt) {
+        //Kiểm tra nếu nhấn enter thì chạy lệnh
+        if(evt.keyCode=="13"){
+            debugger;
+            let n = document.getElementById('inp_value').value;
+            let i=3;
+            let num1 = 1, num2 = 1;
+            let bien_tam;
+            let result = 2;
+            if (n==1){
+                result = "1";
+            }
+            while (i<=n){
+                bien_tam = num1 + num2;
+                result = result + bien_tam;
+                num1 = num2;
+                num2 = bien_tam;
+                
+                i++;
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+    }
+</script>
 </html>
