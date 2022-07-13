@@ -7,12 +7,33 @@
     <title>[Bài tập] In dãy Fibonacci</title>
 </head>
 <body>
-    <h1>[Bài tập] In dãy Fibonacci</h1>
-    <input type="number" name="" id="inp_value" onkeyup="in_day_fibonacci(event)" placeholder="Nhập số vào đây">
-    <p id="result"></p>
+  <script>
+    let array = new Array();
+    let count = 0;
+    do{
+      array[count] = prompt ("Nhập giá trị phần tử thứ " + (count+1) + ". Nhập 'q' để thoát mảng đang nhập");
+      count++;
+    }while(array[count-1] != "q");
+    array = array.slice(0,-1);
+
+    
+    let findValue = prompt ("Nhập giá trị cần tìm");
+    let i = 0;
+    for (; i< array.length; i++){
+      if(array[i] == findValue){
+        alert("Giá trị " + findValue + " tìm thấy ở vị trí thứ " + i + " trong mảng");
+        break;
+      }
+    }
+
+    if(i == array.length){
+      alert ("Không tìm thấy giá trị trong mảng");
+    }
+    console.log(array);
+  </script>
 </body>
 
-<script>
+<!-- <script>
     function in_day_fibonacci(evt) {
         //Kiểm tra nếu nhấn enter thì chạy lệnh
         if(evt.keyCode=="13"){
@@ -36,5 +57,5 @@
             document.getElementById("result").innerHTML = result;
         }
     }
-</script>
+</script> -->
 </html>
