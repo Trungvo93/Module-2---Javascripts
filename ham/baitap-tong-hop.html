@@ -10,76 +10,54 @@
 
 <body>
     <script>
-
         let arr = [];
-
         //Tạo mảng
-        function creatArray(arr) {
+        function creatArray(arr1) {
             let n = 0;
             let inputArr;
             do {
                 inputArr = prompt("Thêm giá trị vào mảng, nhập phím 'q' để dừng thêm");
                 if (inputArr != 'q') {
-                    arr[n] = inputArr;
+                    arr1[n] = inputArr;
                     n++;
                 }
             } while (inputArr != 'q');
-            return arr;
+            return arr1;
         }
-
         arr = creatArray(arr);
-
-        //Chuyển đổi số dạng string sang number
-        function convertStringToNum(arr) {
-            for (let i = 0; i <= arr.length - 1; i++) {
-                let a = Number(arr[i]);
-                if (Number.isNaN(a) == false) {
-                    arr[i] = a;
-                }
-
-            }
-            return arr;
-        }
-
-        arr = convertStringToNum(arr);
-
-        console.log(arr);
 
 
         //Đếm số lần số đó xuất hiện
-        function countNumberArray(arr) {
+        function countNumberArray(arr1) {
             let result = '';
-            let num;
-            let arrLenght = 0;
-            // debugger;
+            //Kiểm tra xem nếu mảng còn số thì reset chạy lại
+            let checkNumArray = false;
             do {
-                arrLenght = 0;
-                for (let i = 0; i <= arr.length - 1; i++) {
-                    // console.log(arr);
-                    if (typeof (arr[i]) == 'number') {
-                        arrLenght++;
+                checkNumArray = false;
+                for (let i = 0; i <= arr1.length - 1; i++) {
+                    if (Number(arr1[i])) {
+                        checkNumArray = true;
                         //Xóa kí tự arr[i]
-                        let newArr = arr.filter(function (value) {
-                            if (value == arr[i]) {
+                        let newArr = arr1.filter(function (value) {
+                            if (value == arr1[i]) {
                                 return false;
                             }
                             return true;
                         });
 
                         //Đếm kí tự là number
-                        num = arr[i];
+                        let num = arr1[i];
                         let count = 0;
-                        for (let j = 0; j <= arr.length - 1; j++) {
-                            if (arr[j] == num) {
+                        for (let j = 0; j <= arr1.length - 1; j++) {
+                            if (arr1[j] == num) {
                                 count++;
                             }
                         }
                         result = result + "Số " + num + " xuất hiện " + count + " lần trong mảng <br>";
-                        arr = newArr;
-
+                        arr1 = newArr;
                     }
                 }
-            } while (arrLenght != 0);
+            } while (checkNumArray == true);
             return result;
         }
         document.write("Mảng [" + arr + "] có: <br>" + countNumberArray(arr));
