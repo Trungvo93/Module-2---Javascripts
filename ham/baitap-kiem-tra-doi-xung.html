@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[*Bài tập] Kiểm tra từ đối xứng</title>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <h1>[*Bài tập] Kiểm tra từ đối xứng</h1>
+        <input type="text" placeholder="Nhập từ kiểm tra đối xứng" onkeyup="checkDoiXung(this.value)">
+        <p id="result"></p>
+    </div>
+
+</body>
+<script>
+
+
+    function checkDoiXung(a) {
+        let arr = a.split("");
+        if (arr.length == 1) {
+            return document.getElementById("result").innerHTML = "Nhập 2 ký tự trở lên"
+        }
+        else if (isPalindrome(arr)) return document.getElementById("result").innerHTML = "Từ đối xứng";
+        else return document.getElementById("result").innerHTML = "Từ không đối xứng";
+    }
+
+
+    function isPalindrome(arr) {
+        if (arr.length == 0 || arr.length == 1) {
+            return true;
+        }
+        if (arr[0] == arr[arr.length - 1]) {
+            arr.pop();
+            arr.shift();
+
+            return isPalindrome(arr);
+        }
+        else return false;
+    }
+
+
+
+
+</script>
+
+</html>
