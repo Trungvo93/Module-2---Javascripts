@@ -10,24 +10,32 @@
 
 <body>
     <script>
-        let points = [40, 100, 1, 5, 25, 10]
-        debugger;
-        points.sort(function (a, b) {
-            
-            return a - b;
-
-        }) // [ 1, 5, 10, 25, 40, 100 ]
-        console.log (points);
-// function giaithua(a){
-            
-        //     if (a == 0 ){
-        //         return 1;
-        //     }
-        //     else{
-        //        return a * giaithua(a-1);
-        //     }
-        // }
-        // console.log(giaithua(4));
+        let text = prompt("Nhập chuỗi các ký tự:");
+        let arr = text.split("");
+        let result = "";
+        document.write("Chuỗi nhập vào " + arr + "<br>");
+        function checkNumber() {
+            // let arr = text.split("");
+            // debugger;
+            for (i = 0; i < arr.length; i++) {
+                let num = 0;
+                let count = 0;
+                if (Number(arr[i])) {
+                    num = arr[i];
+                    for (j = 0; j < arr.length; j++) {
+                        if (num == arr[j]) {
+                            count += 1;
+                            arr.splice(j, 1);
+                        }
+                    }
+                } else {
+                    continue;
+                }
+                result = result + "Số " + num + " xuất hiện " + count + " lần.<br>";
+            }
+            return result;
+        }
+        document.write(checkNumber());
     </script>
 </body>
 

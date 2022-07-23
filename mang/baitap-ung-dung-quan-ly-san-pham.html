@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[*Bài tập] Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+</head>
+<style>
+    button {
+        background-color: green;
+        color: white;
+        border: 0;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+    input {
+        padding: 10px;
+        border-radius: 5px;
+        border: 0.2px solid black;
+    }
+
+    #countProduct {
+        text-align: end;
+    }
+</style>
+
+<body>
+    <h2>Add New Product</h2>
+    <input type="text" name="" id="inpProduct" placeholder="New Product">
+    <button onclick="addProduct()">Add</button>
+
+    <h2>Display All Product</h2>
+    <div>
+        <span>Product Name</span>
+        <span id="countProduct"></span>
+    </div>
+    <div id="showProducts">
+    </div>
+</body>
+
+<script>
+    let arrProduct = [];
+
+    function addProduct() {
+        let itemArr = document.getElementById("inpProduct").value;
+
+        //Check khung nhập có trống không
+        if (itemArr != '') {
+
+            //Check sản phẩm có trong danh sách thì thôi
+            if (arrProduct.indexOf(itemArr) < 0) {
+                arrProduct.push(itemArr);
+                showProducts(arrProduct);
+            }
+        }
+    }
+
+    function showProducts(arrProduct) {
+        let count = 0;
+        let tableProduct = '<table>';
+        for (let i = 0; i <= arrProduct.length - 1; i++) {
+            count++;
+            tableProduct = tableProduct + '<tr><td>' + arrProduct[i] + '</td><td><button class="editProducts" onclick="editProduct(this.value)" value="' +i+ '">Edit</button></td>' + '<td><button class="delProducts" onclick="delProduct(this.value)" value="' +i+ '">Delete</button></td></td>';
+        }
+        tableProduct += '</table>';
+        document.getElementById("showProducts").innerHTML = tableProduct;
+        document.getElementById("countProduct").innerHTML = count + ' products';
+    }
+
+    
+    function delProduct(evt){
+        arrProduct.splice(evt,1);
+        showProducts(arrProduct);
+    }
+</script>
+
+</html>
