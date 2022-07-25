@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="700px" height="400px" style="border: 1px solid black;"></canvas>
+</body>
+<script>
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
+    ctx.beginPath();
+
+    //Vẽ hình chữ nhật
+    ctx.fillStyle = "rgb(191, 171, 151)";
+    ctx.fillRect(200,100,300,200);
+
+    // Vẽ hình tròn
+    ctx.arc(350,200,50,0, 2*Math.PI);
+    ctx.fillStyle = rgb(231, 229, 93);
+    ctx.fill();
+    
+    ctx.clearRect(0,0,500,200);
+
+   
+
+</script>
+</html>
