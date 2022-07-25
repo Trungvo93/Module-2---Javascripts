@@ -36,6 +36,7 @@
     <div>
         <span>Product Name</span>
         <span id="countProduct"></span>
+
     </div>
     <div id="showProducts">
     </div>
@@ -53,9 +54,13 @@
             //Check sản phẩm có trong danh sách thì thôi
             if (arrProduct.indexOf(itemArr) < 0) {
                 arrProduct.push(itemArr);
+                document.getElementById("inpProduct").value = '';
                 showProducts(arrProduct);
             }
+
         }
+        //Để tự focus vào ô input
+        document.getElementById("inpProduct").focus();
     }
 
     function showProducts(arrProduct) {
@@ -63,17 +68,39 @@
         let tableProduct = '<table>';
         for (let i = 0; i <= arrProduct.length - 1; i++) {
             count++;
-            tableProduct = tableProduct + '<tr><td>' + arrProduct[i] + '</td><td><button class="editProducts" onclick="editProduct(this.value)" value="' +i+ '">Edit</button></td>' + '<td><button class="delProducts" onclick="delProduct(this.value)" value="' +i+ '">Delete</button></td></td>';
+            tableProduct = tableProduct + '<tr><td class="nameProducts">' + arrProduct[i] + '</td><td><button class="editProducts" onclick="editProduct(this.value)" value="' + i + '">Edit</button></td>' + '<td><button class="delProducts" onclick="delProduct(this.value)" value="' + i + '">Delete</button></td></td>';
         }
         tableProduct += '</table>';
         document.getElementById("showProducts").innerHTML = tableProduct;
         document.getElementById("countProduct").innerHTML = count + ' products';
     }
 
-    
-    function delProduct(evt){
-        arrProduct.splice(evt,1);
+
+    function delProduct(evt) {
+        arrProduct.splice(evt, 1);
         showProducts(arrProduct);
+    }
+
+
+    let editCheck = true;
+    function editProduct(evt) {
+        let check = document.getElementsByClassName("nameProducts")[evt].innerHTML;
+        
+            if (check == arrProduct[evt] && editCheck == true) {
+                document.getElementsByClassName("nameProducts")[evt].innerHTML = '<input type="text"  id="changeNameProduct" value="' + check + '">';
+                editCheck = false;
+                console.log(editCheck);
+            }
+            if (check != arrProduct[evt] && editCheck == false) {
+                arrProduct[evt] = document.getElementById("changeNameProduct").value;
+                document.getElementsByClassName("nameProducts")[evt].innerHTML = arrProduct[evt];
+                editCheck = true;
+                console.log(editCheck);
+
+            }
+        
+
+
     }
 </script>
 
