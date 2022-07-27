@@ -42,7 +42,7 @@
         //Di chuyển hình chữ nhật
         moveRect() {
             //Chạy xuống
-            if (y + this.height < 500 && rotate == true) {
+            if (this.y + this.height < 500 && rotate == true) {
                 this.clearRectangle();
                 this.y++;
                 this.createRectangle();
@@ -75,6 +75,7 @@
     }
     setInterval(b, 5);
 
+    // rect.createRectangle();
 </script>
 
 </html>
