@@ -10,6 +10,8 @@
 
 <body>
     <canvas id="myCanvas" width=1200px height=700px style="border: 1px solid black;"></canvas>
+    <button onclick="start()">Bắt đầu</button>
+    <button onclick="stop()">Dừng lại</button>
     <script>
         function Circle(x, y, radius) {
             this.x = x;
@@ -52,13 +54,19 @@
         }
         //Tại sao phải chạy hàm drawCircles ngoài này, thì trong setInterval gọi mới chạy??? Tại vì nó lỗi cache, con bà nó
         // drawCircles();
+        let myVar;
+        function start() {
+            myVar = setInterval(function () {
+                let canvas = document.getElementById("myCanvas");
+                let ctx = canvas.getContext("2d");
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                drawCircles();
+            }, 1500);
+        }
 
-        setInterval(function () {
-            let canvas = document.getElementById("myCanvas");
-            let ctx = canvas.getContext("2d");
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            drawCircles();
-        }, 1500);
+        function stop(){
+            clearInterval(myVar);
+        }
 
     </script>
 </body>

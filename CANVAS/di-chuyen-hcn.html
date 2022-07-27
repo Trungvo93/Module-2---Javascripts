@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Thực hành] Di chuyển hình chữ nhật</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width=1200px height="500px" style="border: 1px solid;"></canvas>
+</body>
+
+<script>
+    class Rectangle {
+        constructor(x, y, width, height, color) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+            this.color = color;
+        }
+
+        //Tạo hình chữ nhật
+        createRectangle() {
+            let canvas = document.getElementById("myCanvas");
+            let ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            ctx.fillStyle = this.color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);
+        }
+
+        //Xóa hình chữ nhật
+        clearRectangle() {
+            let canvas = document.getElementById("myCanvas");
+            let ctx = canvas.getContext("2d");
+            ctx.clearRect(this.x, this.y, this.width, this.height);
+        }
+
+
+        //Di chuyển hình chữ nhật
+        moveRect() {
+            //Chạy xuống
+            if (y + this.height < 500 && rotate == true) {
+                this.clearRectangle();
+                this.y++;
+                this.createRectangle();
+                if (this.y + this.height == 500) {
+                    rotate = false;
+                }
+            }
+
+            //Chạy lên
+            if (this.y > 0 && rotate == false) {
+                this.clearRectangle();
+                this.y--;
+                this.createRectangle();
+                if (this.y == 0) {
+                    rotate = true;
+                }
+            }
+        }
+    }
+
+
+    let x = 20, y = 0, width = 100, height = 50, color = '#fa4b2a';
+    let rect = new Rectangle(x, y, width, height, color);
+    let rotate = true;
+
+
+    function b() {
+        rect.moveRect();
+    }
+    setInterval(b, 5);
+
+</script>
+
+</html>
