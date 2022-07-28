@@ -20,6 +20,7 @@
             this.width = width;
             this.height = height;
             this.color = color;
+            this.rotate = true;
         }
 
         //Tạo hình chữ nhật
@@ -41,41 +42,45 @@
 
         //Di chuyển hình chữ nhật
         moveRect() {
+            let canvas = document.getElementById("myCanvas");
             //Chạy xuống
-            if (this.y + this.height < 500 && rotate == true) {
+            if (this.y + this.height < canvas.height && this.rotate == true) {
                 this.clearRectangle();
                 this.y++;
                 this.createRectangle();
-                if (this.y + this.height == 500) {
-                    rotate = false;
+                if (this.y + this.height == canvas.height) {
+                    this.rotate = false;
                 }
-                // console.log(rect);
+
             }
 
             //Chạy lên
-            if (this.y > 0 && rotate == false) {
+            if (this.y > 0 && this.rotate == false) {
                 this.clearRectangle();
                 this.y--;
                 this.createRectangle();
                 if (this.y == 0) {
-                    rotate = true;
+                    this.rotate = true;
                 }
             }
         }
     }
 
 
-    let x = 20, y = 0, width = 100, height = 50, color = '#fa4b2a';
-    let rect = new Rectangle(x, y, width, height, color);
-    let rotate = true;
+    let x = 20, y = 0, width = 100, height = 50, color = '#fa4b2a',rotate = true;
+    let rect = new Rectangle(x, y, width, height, color,rotate);
 
+    let rect2 = new Rectangle(200,100,200,100,color,rotate);
 
     function b() {
         rect.moveRect();
     }
     setInterval(b, 5);
-
-    // rect.createRectangle();
+    
+    function c(){
+        rect2.moveRect();
+    }
+    setInterval(c, 2);
 </script>
 
 </html>
