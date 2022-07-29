@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    class Date {
+        constructor(day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+        getDay() {
+            return this.day;
+        }
+        getMonth() {
+            return this.month;
+        }
+        getYear() {
+            return this.year;
+        }
+        //
+        setDay(day) {
+            this.day = day;
+        }
+        setMonth(month) {
+            this.month = month;
+        }
+        setYear(year) {
+            this.year = year;
+        }
+    }
+
+    // let a = +prompt("nhap ngay");    
+    // let b = +prompt("nhap thang");
+    // let c = +prompt("nhap nam");
+    let date = new Date();
+    date.setDay(5);
+    date.setMonth(2);
+    date.setYear(2011);
+    let day = date.getDay();
+    let month = date.getMonth();
+    let year = date.getYear();
+    alert(day + "/" + month + "/" + year);
+    // date.day = 10;
+    // date.month = 11;
+    // date.year = 2010;
+    // alert(date.day + "/" + date.month + "/" + date.year);
+    // console.log(date);
+</script>
