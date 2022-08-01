@@ -10,16 +10,35 @@
 
 <body>
     <script>
-        function addNumbers() {
-            firstNum = 4;
-            secondNum = 8;
-            result = firstNum + secondNum;
-            return result;
+        flag = 1;
+        function start() {
+            if (flag == 1 && (hero.left < window.innerWidth - hero.size)) {
+                hero.moveRight();
+                if ((hero.left >= window.innerWidth - hero.size)) {
+                    flag = 2;
+                }
+            }
+            if (flag == 2 && (hero.top < window.innerHeight - hero.size)) {
+                hero.moveDown();
+                if ((hero.top >= window.innerHeight - hero.size)) {
+                    flag = 3;
+                }
+            }
+            if (flag == 3 && (hero.left > hero.size)) {
+                hero.moveLeft();
+                if (hero.left <= hero.size){
+                    flag = 4;
+                }
+            }
+            if(flag == 4 && (hero.top > 20)){
+                hero.moveTop();
+                if(hero.top==20){
+                    flag = 1;
+                }
+            }
+            document.getElementById('game').innerHTML = hero.getHeroElement();
+            setTimeout(start, 100)
         }
-        result = 0;
-        console.log(result);
-        sum = addNumbers();
-        console.log(result);
     </script>
 </body>
 
